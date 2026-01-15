@@ -26,7 +26,7 @@ console.log(e);
 console.log("Question 6");
 let f = 10;
 f %= 3;
-console.log(f);
+console.log(f); 
 
 console.log("Question 7");
 let g = 2;
