@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+
+body{
+  display: flex;
+  justify-content: center;
+  margin-top: 40px;
+  background: #000; /* Dark background to make neon pop */
+}
+
+/* Neon Glow Animation */
+@keyframes neonPulse {
+  0% { box-shadow: 0 0 8px #0ff, 0 0 12px #0ff, 0 0 18px #0ff; }
+  50% { box-shadow: 0 0 16px #00f6ff, 0 0 26px #00f6ff, 0 0 40px #00f6ff; }
+  100% { box-shadow: 0 0 8px #0ff, 0 0 12px #0ff, 0 0 18px #0ff; }
+}
+
+/* ------------------- CARD ------------------- */
+.card {
+  width: 300px;
+  padding: 20px;
+  border: 2px solid #0ff;
+  border-radius: 12px;
+  background-color: #0a0a0a;
+  font-family: sans-serif;
+  text-align: center;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  animation: neonPulse 2s infinite;
+}
+
+.card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 25px cyan, 0 0 40px #00f6ff;
+}
+
+/* ------------------- HEADING ------------------- */
+.card-title {
+  margin-top: 0;
+  color: #0ff;
+  font-size: 1.7rem;
+  text-shadow: 0 0 10px cyan, 0 0 20px cyan;
+  transition: transform 0.3s ease;
+}
+
+.card-title:hover {
+  transform: scale(1.1);
+}
+
+/* ------------------- PARAGRAPH ------------------- */
+.card-text {
+  color: #d4faff;
+  line-height: 1.5;
+}
+
+/* ------------------- IMAGE ------------------- */
+.card img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+  margin: 15px 0;
+  transition: transform 0.4s ease, filter 0.4s ease;
+  box-shadow: 0 0 12px #00f6ff;
+}
+
+.card img:hover {
+  transform: scale(1.07);
+  filter: brightness(1.3);
+}
+
+/* ------------------- LINK ------------------- */
+.card-link {
+  display: block;
+  margin-bottom: 15px;
+  color: #00eaff;
+  text-decoration: none;
+  font-weight: bold;
+  text-shadow: 0 0 10px cyan;
+  transition: opacity 0.3s ease;
+}
+
+.card-link:hover {
+  opacity: 0.7;
+}
+
+/* ------------------- BUTTON ------------------- */
+.card-btn {
+  background-color: #ff0066;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 0 10px #ff0077;
+}
+
+.card-btn:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 20px #ff3399, 0 0 40px #ff66b3;
+}
+
+</style>
+
+<body>
+    <script>
+// 1. Create the card container
+const card = document.createElement('div');
+card.classList.add('card');
+
+// 2.1 Create the heading
+const heading = document.createElement('h2');
+heading.textContent = "Product Card";
+heading.classList.add('card-title');
+
+// 2.2 Create the paragraph
+const description = document.createElement('p');
+description.textContent = "This is a sample product description.";
+description.classList.add('card-text');
+
+// 2.3 Create the image
+const image = document.createElement('img');
+image.setAttribute('src', 'https://img.drz.lazcdn.com/static/pk/p/a7c426886769736c5f92c878cc761d93.png_720x720q80.png'); // Sample image
+image.setAttribute('alt', 'Product Image');
+
+// 2.4 Create the anchor tag
+const link = document.createElement('a');
+link.textContent = "View More";
+link.setAttribute('href', '#');
+link.classList.add('card-link');
+
+// 2.5 Create the button
+const deleteBtn = document.createElement('button');
+deleteBtn.innerText = "Delete Card";
+deleteBtn.classList.add('card-btn');
+
+// Append all elements to the card container
+card.appendChild(heading);
+card.appendChild(description);
+card.appendChild(image);
+card.appendChild(link);
+card.appendChild(deleteBtn);
+
+// Finally, append the card to the body (or a specific container)
+document.body.appendChild(card);
+
+    </script>
+</body>
+</html>

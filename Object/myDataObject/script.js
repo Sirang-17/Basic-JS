@@ -11,7 +11,7 @@ let myData = {
     location: function () {
         return this.village + ", " + this.Province + ", " + this.country;
     },
-    phoneNumber: "03001234567",
+    phoneNumber: +92301234567,
     email: "sirangpassu@gmail.com",
     hobbies: {
         playing: "football",
